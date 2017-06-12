@@ -1,0 +1,9 @@
+<h1> <%= @genre.name %> </h1>
+
+<% Song.all.select{|s| s.genre == @genre}.each do |song| %>
+
+  <div>
+    <%= link_to song.name, song_path(song) %>
+  </div>
+
+<% end %>
